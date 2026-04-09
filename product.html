@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="text-white bg-orange-400 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0 text-2xl font-bold">RIT BUSINESS</div>
+
+          <!-- Menu Links -->
+          <div class="hidden md:hidden lg:flex space-x-6">
+            <a href="index.html" class="hover:text-green-600 font-medium"
+              >Homepage</a
+            >
+            <a href="about.html" class="hover:text-green-600 font-medium"
+              >About</a
+            >
+            <a href="product.html" class="hover:text-green-600 font-medium"
+              >Products</a
+            >
+            <a href="contact.html" class="hover:text-green-600 font-medium"
+              >Contacts</a
+            >
+          </div>
+
+          <!-- Right Section -->
+          <div class="flex items-center space-x-4">
+            <div class="hidden md:flex space-x-4">
+              <a
+                href="registration.html"
+                class="hover:text-green-600 font-medium"
+                >Register</a
+              >
+              <a href="login.html" class="hover:text-green-600 font-medium"
+                >LogIn</a
+              >
+            </div>
+
+            <!-- Language Dropdown -->
+            <div class="relative">
+              <button
+                id="langBtn"
+                class="flex items-center hover:text-green-600 font-medium focus:outline-none"
+              >
+                <i class="fa-solid fa-globe mr-1"></i>EN
+                <i class="fa-solid fa-chevron-down ml-1"></i>
+              </button>
+              <div
+                id="langMenu"
+                class="absolute right-0 mt-2 w-24 bg-white border rounded shadow-lg hidden"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-green-100 text-black"
+                  >EN</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-green-100 text-black"
+                  >FR</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-green-100 text-black"
+                  >ES</a
+                >
+              </div>
+            </div>
+
+            <!-- Cart -->
+            <div>
+              <a
+                href="cart.html"
+                class="text-white hover:text-green-600 text-xl"
+              >
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:block lg:hidden">
+              <button
+                id="mobileBtn"
+                class="text-white hover:text-green-600 focus:outline-none text-2xl"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="text-white hidden mt-2 space-y-2">
+          <a
+            href="index.html"
+            class="md:block px-4 py-2 hover:bg-green-100 rounded"
+            >Home page</a
+          >
+          <a
+            href="about.html"
+            class="block px-4 py-2 hover:bg-green-100 rounded"
+            >About</a
+          >
+          <a
+            href="product.html"
+            class="block px-4 py-2 hover:bg-green-100 rounded"
+            >Products</a
+          >
+          <a
+            href="contact.html"
+            class="block px-4 py-2 hover:bg-green-100 rounded"
+            >Contacts</a
+          >
+          <a
+            href="registration.html"
+            class="block px-4 py-2 hover:bg-green-100 rounded"
+            >Register</a
+          >
+          <a
+            href="login.html"
+            class="block px-4 py-2 hover:bg-green-100 rounded"
+            >Log In</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- search option -->
+    <form id="searchForm" class="bg-orange-200 pb-[20px] text-center">
+      <input
+        type="text"
+        id="search"
+        style="
+          padding: 15px;
+          border-radius: 15px;
+          border: none;
+          background-color: white;
+          margin-top: 30px;
+        "
+      />
+      <input
+        type="submit"
+        style="
+          padding: 10px;
+          background-color: green;
+          color: white;
+          border-radius: 15px;
+          border: none;
+        "
+      />
+    </form>
+
+    <!-- products container -->
+    <div
+      id="products"
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-5"
+    ></div>
+
+    <!-- footer -->
+    <footer id="footer" class="bg-[#001a1d] text-gray-300 mt-[100px]">
+      <div class="mx-auto px-6 py-20 grid md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6 font-[raleway]">
+            RIT BUSINESS
+          </h2>
+          <p class="mb-6">
+            Discover products that bring quality, style, and convenience into
+            your everyday life! Our carefully selected range is designed to meet
+            your needs—whether you're looking for durability, affordability, or
+            modern design.
+          </p>
+          <h3 class="text-white font-semibold mb-3 font-[raleway] text-[16px]">
+            Stay Updated
+          </h3>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-3 rounded-l-full bg-[#0b2a2e] text-white focus:outline-none"
+            />
+            <button
+              class="bg-[#f95e4d] px-6 rounded-r-full flex items-center justify-center hover:bg-red-500 transition duration-300"
+            >
+              <i class="fa-solid fa-paper-plane text-white"></i>
+            </button>
+          </form>
+        </div>
+        <div class="md:ml-[150px] lg:ml-[150px]">
+          <h4
+            class="text-white font-bold text-lg mb-6 relative inline-block font-[raleway]"
+          >
+            Company
+            <span
+              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
+            ></span>
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="index.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  Homepage
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  About
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="product.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  Products
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="registration.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  Registration
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="login.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  LogIn
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+              >
+                <i
+                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                ></i>
+                <span
+                  class="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  Contact
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 relative inline-block font-[raleway]"
+          >
+            Get in Touch
+            <span
+              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
+            ></span>
+          </h4>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
+              >
+                <i class="fa-solid fa-location-dot text-[#f95e4d]"></i>
+              </div>
+              <p>
+                184 Sabo Road<br />
+                Sabo, Osogbo<br />
+                Osun States
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
+              >
+                <i class="fa-solid fa-phone text-[#f95e4d]"></i>
+              </div>
+              <p>08106448731</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
+              >
+                <i class="fa-solid fa-envelope text-[#f95e4d]"></i>
+              </div>
+              <p>ademola.idrisakinola1110@gmail.com</p>
+            </div>
+            <div class="flex gap-4 pt-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-[#0b2a2e] bg-[#031013]">
+        <div
+          class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p>
+            © Copyright <strong class="text-white">MyWebsite</strong> All Rights
+            Reserved
+          </p>
+
+          <div class="text-sm flex flex-wrap gap-6 items-center">
+            <a href="#" class="hover:text-[#f95e4d] transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-[#f95e4d] transition"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-[#f95e4d] transition"
+              >Cookie Policy</a
+            >
+            <span
+              >Designed by
+              <a href="#" class="text-[#f95e4d]">RIT BUSINESS</a></span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="#"
+      id="scroll-top"
+      class="w-10 h-10 text-white fixed bottom-10 right-10 bg-[#f95e4d] rounded-[100%] scroll-smooth"
+      ><i class="fa-solid fa-arrow-up mx-[9px] my-3"></i
+    ></a>
+    <script src="product.js"></script>
+  </body>
+</html>
