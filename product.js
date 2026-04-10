@@ -124,6 +124,12 @@ searchForm.addEventListener("submit", function (e) {
 
   console.log(filterCheck);
 
+  if (filterCheck.length === 0) {
+    productContainer.innerHTML =
+      "<p class='text-center text-red-500 text-xl'>No product found</p>";
+    return;
+  }
+
   productContainer.innerHTML = filterCheck
     .map(function (value) {
       quantities[value.id] = 1;
