@@ -35,10 +35,10 @@ document.getElementById("form").addEventListener("submit", function (e) {
   // Get form values
   let fname = document.querySelector("#fname").value;
   let lname = document.querySelector("#lname").value;
-  let Username = document.querySelector("#username").value;
+  const Username = document.querySelector("#username").value;
   let Email = document.querySelector("#Email").value;
-  let password = document.querySelector("#password").value;
-  let confirmPassword = document.querySelector("#confirmPassword").value;
+  const password = document.querySelector("#password").value;
+  const confirmPassword = document.querySelector("#confirmPassword").value;
   let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   // validation
