@@ -21,9 +21,6 @@ mobileBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
-function onlyText(input) {
-  input.value = input.value.replace(/[^a-zA-Z]/g, "");
-}
 
 function mixture(input) {
   input.value = input.value.replace(/[^a-zA-Z0-9\s,.-]/g, "");
@@ -32,18 +29,20 @@ function mixture(input) {
 document.getElementById("myform").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  const inputUsername = document.getElementById("loginUsername").value;
+  const inputPassword = document.getElementById("loginPassword").value;
 
-  if (username == "" || password == "") {
-    document.getElementById("result").innerHTML = "You must fill in all fields";
-    document.getElementById("result").style.color = "red";
-  } else if (password.length < 8 || password.length > 8) {
-    document.getElementById("result").innerHTML =
-      "Password must be 8 characters long.";
-    document.getElementById("result").style.color = "red";
+  // Get Stored Data
+  const storedUsername = localStorage.getItem("username");
+  const storedPassword = localStorage.getItem("password");
+
+  if (inputUsername === storedUsername && inputPassword === storedPassword) {
+    localStorage.setItem("loggedIn", "true");
+    alert("Login successful!");
+    window.location.href = "product.html";
   } else {
-    document.getElementById("result").innerHTML = "Registration successful!";
-    document.getElementById("result").style.color = "green";
+    document.getElementById("result").innerHTML =
+      "Invalid username or password.";
+    document.getElementById("result").style.color = "red";
   }
 });

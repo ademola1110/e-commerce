@@ -50,30 +50,27 @@ document.getElementById("form").addEventListener("submit", function (e) {
     !password ||
     !confirmPassword
   ) {
-    document.getElementById("result").innerHTML = "Please fill in all fields.";
-    document.getElementById("result").style.color = "red";
+    result.innerHTML = "Please fill in all fields.";
+    result.style.color = "red";
   } else if (!emailPattern.test(Email)) {
-    document.getElementById("result").innerHTML = "Enter a valid email.";
-    document.getElementById("result").style.color = "red";
-  } else if (
-    password.length < 8 ||
-    (password.length > 8 && password === confirmPassword)
-  ) {
-    document.getElementById("result").innerHTML =
-      "Password must be 8 characters long.";
-    document.getElementById("result").style.color = "red";
+    result.innerHTML = "Enter a valid email.";
+    result.style.color = "red";
+  } else if (password.length < 8) {
+    result.innerHTML = "Password must be at least 8 characters.";
+    result.style.color = "red";
   } else if (password !== confirmPassword) {
-    document.getElementById("result").innerHTML = "Passwords do not match.";
-    document.getElementById("result").style.color = "red";
+    result.innerHTML = "Passwords do not match.";
+    result.style.color = "red";
   } else {
-    // Save Your Data
-    localStorage.setItem("username", username);
+    result.innerHTML = "Registration successful!";
+    result.style.color = "green";
+
+    // ✅ SAVE ONLY WHEN VALID
+    localStorage.setItem("username", Username);
     localStorage.setItem("password", password);
     localStorage.setItem("registered", "true");
 
     alert("Registration successful!");
     window.location.href = "login.html";
-    // document.getElementById("result").innerHTML = "Registration successful!";
-    // document.getElementById("result").style.color = "green";
   }
 });
