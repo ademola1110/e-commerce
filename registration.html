@@ -138,9 +138,9 @@
     <form
       id="form"
       action=""
-      class="flex justify-center items-center h-screen bg-gray-200"
+      class="flex justify-center items-center h-screen"
     >
-      <div class="w-[280px] bg-gray-400 p-6 rounded-lg text-center shadow-lg">
+      <div class="w-[280px] p-6 rounded-lg text-center bg-gray-100 shadow-lg">
         <p class="py-4 font-bold text-2xl">SIGN UP</p>
 
         <input
@@ -156,6 +156,14 @@
           placeholder="Last Name"
           id="lname"
           oninput="onlyText(this)"
+          class="w-[80%] h-8 mb-4 px-2 text-sm bg-white outline-none rounded"
+        />
+
+        <input
+          type="text"
+          placeholder="UserName"
+          id="username"
+          oninput="mixture(this)"
           class="w-[80%] h-8 mb-4 px-2 text-sm bg-white outline-none rounded"
         />
 

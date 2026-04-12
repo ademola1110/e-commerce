@@ -26,41 +26,53 @@ let products = [];
 
 async function fetchProducts() {
   try {
-    const url = "https://api.escuelajs.co/api/v1/products?offset=0&limit=50";
-    const fetchData = {
-      method: "GET",
-    };
+    const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
 
-    const response = await fetch(url, fetchData);
+    const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
-    products = data;
 
-    console.log(products);
+    products = data.slice(0, 50);
+
     productContainer.innerHTML = products
-      .map(function (value, index, array) {
+      .slice(0, 50)
+      .map((value) => {
         quantities[value.id] = 1;
+
         return `
-      <div class="text-center shadow-lg p-5 bg-white rounded-lg">   
-      <img class="w-[100%] border-2 border-solid border-gray-200" src="${value.images[0]}"
-      <p class="font-bold text-blue-500 pb-[15px]">${value.title}</p>
-      <p class="text-green-700 font-bold mb-3">$${value.price}</p>
-      <button onclick="addToCart(${value.id})" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-600">Add to Cart</button>
-      <div class="flex items-center justify-center gap-4 mt-7">
-      <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
-      <span id="qty-${value.id}" class="font-bold text-lg">1</span>
-      <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">+</button>
-      </div>  
+      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
+        
+        <img 
+          class="w-full h-[180px] rounded-lg mb-3" 
+          src="${value.image_link}" 
+        />
+
+        <p class="font-semibold text-gray-800 mb-2">
+          ${value.name}
+        </p>
+
+        <p class="text-orange-500 font-bold text-lg">
+          $${value.price}
+        </p>
+
+        <button onclick="addToCart(${value.id})"
+          class="bg-green-600 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          Add to Cart
+        </button>
+
+        <div class="flex items-center justify-center gap-4 mt-3">
+          <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
+          <span id="qty-${value.id}" class="font-bold">1</span>
+          <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
+        </div>
+
       </div>
-            `;
+    `;
       })
       .join("");
   } catch (error) {
     console.log(error);
     productContainer.innerHTML = "Error fetching product";
     productContainer.style.color = "red";
-  } finally {
-    console.log("Fetching done");
   }
 }
 
@@ -100,9 +112,9 @@ function addToCart(id) {
   } else {
     cart.push({
       id: product.id,
-      title: product.title,
+      name: product.name,
       price: product.price,
-      image: product.images[0],
+      image: product.image_link,
       quantity: qty,
     });
   }
@@ -119,7 +131,7 @@ searchForm.addEventListener("submit", function (e) {
   let searchInput = document.querySelector("#search").value;
 
   let filterCheck = products.filter(function (value, index, array) {
-    return value.title.toLowerCase().includes(searchInput.toLowerCase());
+    return value.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
   console.log(filterCheck);
@@ -131,15 +143,26 @@ searchForm.addEventListener("submit", function (e) {
   }
 
   productContainer.innerHTML = filterCheck
+    .slice(0, 50)
     .map(function (value) {
       quantities[value.id] = 1;
 
       return `
-      <div class="text-center shadow-lg p-5 bg-white rounded-lg">   
-        <img class="w-[100%] border-2 border-solid border-gray-200" src="${value.images[0]}">
-        <p class="font-bold text-blue-500 pb-[15px]">${value.title}</p>
-        <p class="text-green-700 font-bold mb-3">$${value.price}</p>
-        <button onclick="addToCart(${value.id})" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-600">Add to Cart</button>
+      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">   
+        <img 
+              class="w-full h-[180px] rounded-lg mb-3" 
+              src="${value.image_link}" 
+            />
+            <p class="font-semibold text-gray-800 mb-2">
+              ${value.name}
+            </p>
+            <p class="text-orange-500 font-bold text-lg">
+              $${value.price}
+            </p>
+        <button onclick="addToCart(${value.id})"
+          class="bg-green-600 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          Add to Cart
+        </button>
 
         <div class="flex items-center justify-center gap-4 mt-7">
           <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
@@ -150,4 +173,15 @@ searchForm.addEventListener("submit", function (e) {
     `;
     })
     .join("");
+});
+
+const scrollTopBtn = document.getElementById("scroll-top");
+
+scrollTopBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });

@@ -26,23 +26,24 @@ let products = [];
 
 async function fetchProducts() {
   try {
-    const url = "https://api.escuelajs.co/api/v1/products?offset=0&limit=20";
+    const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
 
     const response = await fetch(url);
     const data = await response.json();
 
-    products = data;
+    products = data.slice(0, 20);
 
     productContainer.innerHTML = products
+      .slice(0, 20) // optional (limits products)
       .map(function (value) {
         return `
-          <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">
+          <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
             <img 
-              class="w-full h-[180px] object-cover rounded-lg mb-3 border" 
-              src="${value.images[0]}" 
+              class="w-full h-[180px] rounded-lg mb-3" 
+              src="${value.image_link}" 
             />
             <p class="font-semibold text-gray-800 mb-2">
-              ${value.title}
+              ${value.name}
             </p>
             <p class="text-orange-500 font-bold text-lg">
               $${value.price}
@@ -59,3 +60,14 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+const scrollTopBtn = document.getElementById("scroll-top");
+
+scrollTopBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

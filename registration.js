@@ -35,13 +35,14 @@ document.getElementById("form").addEventListener("submit", function (e) {
   // Get form values
   let fname = document.querySelector("#fname").value;
   let lname = document.querySelector("#lname").value;
+  let Username = document.querySelector("#username").value;
   let Email = document.querySelector("#Email").value;
   let password = document.querySelector("#password").value;
   let confirmPassword = document.querySelector("#confirmPassword").value;
   let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   // validation
-  if (!fname || !lname || !Email || !password || !confirmPassword) {
+  if (!fname || !lname || !Username || !Email || !password || !confirmPassword) {
     document.getElementById("result").innerHTML = "Please fill in all fields.";
     document.getElementById("result").style.color = "red";
   } else if (!emailPattern.test(Email)) {
