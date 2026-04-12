@@ -42,7 +42,14 @@ document.getElementById("form").addEventListener("submit", function (e) {
   let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   // validation
-  if (!fname || !lname || !Username || !Email || !password || !confirmPassword) {
+  if (
+    !fname ||
+    !lname ||
+    !Username ||
+    !Email ||
+    !password ||
+    !confirmPassword
+  ) {
     document.getElementById("result").innerHTML = "Please fill in all fields.";
     document.getElementById("result").style.color = "red";
   } else if (!emailPattern.test(Email)) {
@@ -59,7 +66,14 @@ document.getElementById("form").addEventListener("submit", function (e) {
     document.getElementById("result").innerHTML = "Passwords do not match.";
     document.getElementById("result").style.color = "red";
   } else {
-    document.getElementById("result").innerHTML = "Registration successful!";
-    document.getElementById("result").style.color = "green";
+    // Save Your Data
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    localStorage.setItem("registered", "true");
+
+    alert("Registration successful!");
+    window.location.href = "login.html";
+    // document.getElementById("result").innerHTML = "Registration successful!";
+    // document.getElementById("result").style.color = "green";
   }
 });
