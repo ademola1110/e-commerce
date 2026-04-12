@@ -26,6 +26,9 @@ let products = [];
 
 async function fetchProducts() {
   try {
+    // Show loading first
+    productContainer.innerHTML = `<p class="text-center text-orange-500 text-lg font-semibold animate-pulse">Loading products...</p>`;
+
     const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
 
     const response = await fetch(url);
