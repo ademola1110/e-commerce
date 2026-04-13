@@ -32,10 +32,6 @@
             <a href="contact.html" class="hover:text-green-600 font-medium"
               >Contacts</a
             >
-          </div>
-
-          <!-- Right Section -->
-          <div class="flex items-center space-x-4">
             <div class="hidden md:flex space-x-4">
               <a
                 href="registration.html"
@@ -46,7 +42,37 @@
                 >LogIn</a
               >
             </div>
+          </div>
 
+          <!-- search option -->
+          <form id="searchForm" class="hidden md:flex text-center">
+      <input
+        type="text"
+        id="search"
+        placeholder="search products"
+        style="
+          padding: 12px;
+          border-radius: 15px;
+          border: none;
+          background-color: white;
+          color: black;
+        "
+      />
+      <input
+        type="submit"
+        style="
+          padding: 8px;
+          background-color: green;
+          color: white;
+          border-radius: 15px;
+          border: none;
+        "
+      />
+    </form>
+          
+
+          <!-- Right Section -->
+          <div class="flex items-center space-x-4">
             <!-- Language Dropdown -->
             <div class="relative">
               <button
@@ -136,23 +162,24 @@
       </div>
     </nav>
 
-    <!-- search option -->
-    <form id="searchForm" class="bg-orange-300 pb-[20px] text-center">
+    <!-- search option for small screens -->
+          <form id="searchForm" class="md:hidden bg-orange-200 text-center py-[10px]">
       <input
         type="text"
         id="search"
+        placeholder="search products"
         style="
-          padding: 15px;
+          padding: 12px;
           border-radius: 15px;
           border: none;
           background-color: white;
-          margin-top: 30px;
+          color: black;
         "
       />
       <input
         type="submit"
         style="
-          padding: 10px;
+          padding: 8px;
           background-color: green;
           color: white;
           border-radius: 15px;
@@ -160,6 +187,7 @@
         "
       />
     </form>
+
 
     <!-- products container -->
     <div
@@ -401,7 +429,7 @@
     <a
       href="#"
       id="scroll-top"
-      class="w-10 h-10 text-white fixed bottom-10 right-10 bg-[#f95e4d] rounded-[100%]"
+      class="w-10 h-10 text-white fixed bottom-10 right-10 bg-orange-500 rounded-[100%]"
       ><i class="fa-solid fa-arrow-up mx-[9px] my-3"></i
     ></a>
     <script src="product.js"></script>

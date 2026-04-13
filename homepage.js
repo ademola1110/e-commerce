@@ -29,27 +29,28 @@ async function fetchProducts() {
     // Show loading first
     productContainer.innerHTML = `<p class="text-orange-500 text-lg font-semibold animate-pulse">Loading products...</p>`;
 
-    const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
+    const url =
+      "https://dummyjson.com/products?limit=20&sortBy=title&order=asc";
 
     const response = await fetch(url);
     const data = await response.json();
 
-    products = data.slice(0, 20);
-
+    products = data.products;
+console.log(products)
     productContainer.innerHTML = products
-      .slice(0, 20) // optional (limits products)
+      // .slice(0, 20) // optional (limits products)
       .map(function (value) {
         return `
           <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
             <img 
               class="w-full h-[180px] rounded-lg mb-3" 
-              src="${value.image_link}" 
+              src="${value.images[0]}" 
             />
             <p class="font-semibold text-gray-800 mb-2">
-              ${value.name}
+              ${value.title}
             </p>
             <p class="text-orange-500 font-bold text-lg">
-              $${value.price}
+              $${value.price.toLocaleString()}
             </p>
           </div>
         `;

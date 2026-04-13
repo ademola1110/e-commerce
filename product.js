@@ -29,15 +29,15 @@ async function fetchProducts() {
     // Show loading first
     productContainer.innerHTML = `<p class="text-orange-500 text-lg font-semibold animate-pulse">Loading products...</p>`;
 
-    const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
+    const url =
+      "https://dummyjson.com/products?limit=50&sortBy=title&order=asc";
 
     const response = await fetch(url);
     const data = await response.json();
 
-    products = data.slice(0, 50);
+    products = data.products;
 
     productContainer.innerHTML = products
-      .slice(0, 50)
       .map((value) => {
         quantities[value.id] = 1;
 
@@ -46,27 +46,27 @@ async function fetchProducts() {
         
         <img 
           class="w-full h-[180px] rounded-lg mb-3" 
-          src="${value.image_link}" 
+          src="${value.images[0]}" 
         />
 
         <p class="font-semibold text-gray-800 mb-2">
-          ${value.name}
+          ${value.title}
         </p>
 
         <p class="text-orange-500 font-bold text-lg">
-          $${value.price}
+          $${value.price.toLocaleString()}
         </p>
-
-        <button onclick="addToCart(${value.id})"
-          class="bg-green-600 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
-          Add to Cart
-        </button>
 
         <div class="flex items-center justify-center gap-4 mt-3">
           <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
           <span id="qty-${value.id}" class="font-bold">1</span>
           <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
         </div>
+
+        <button onclick="addToCart(${value.id})"
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          Add to Cart
+        </button>
 
       </div>
     `;
@@ -133,7 +133,7 @@ searchForm.addEventListener("submit", function (e) {
   let searchInput = document.querySelector("#search").value;
 
   let filterCheck = products.filter(function (value, index, array) {
-    return value.name.toLowerCase().includes(searchInput.toLowerCase());
+    return value.title.toLowerCase().includes(searchInput.toLowerCase());
   });
 
   console.log(filterCheck);
@@ -145,7 +145,6 @@ searchForm.addEventListener("submit", function (e) {
   }
 
   productContainer.innerHTML = filterCheck
-    .slice(0, 50)
     .map(function (value) {
       quantities[value.id] = 1;
 
@@ -153,24 +152,26 @@ searchForm.addEventListener("submit", function (e) {
       <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">   
         <img 
               class="w-full h-[180px] rounded-lg mb-3" 
-              src="${value.image_link}" 
+              src="${value.images[0]}" 
             />
             <p class="font-semibold text-gray-800 mb-2">
-              ${value.name}
+              ${value.title}
             </p>
             <p class="text-orange-500 font-bold text-lg">
-              $${value.price}
+              $${value.price.toLocaleString()}
             </p>
-        <button onclick="addToCart(${value.id})"
-          class="bg-green-600 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
-          Add to Cart
-        </button>
+        
 
         <div class="flex items-center justify-center gap-4 mt-7">
           <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
           <span id="qty-${value.id}" class="font-bold text-lg">1</span>
           <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">+</button>
-        </div>  
+        </div> 
+        
+        <button onclick="addToCart(${value.id})"
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          Add to Cart
+        </button>
       </div>
     `;
     })
