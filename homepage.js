@@ -56,7 +56,6 @@ async function fetchProducts() {
       })
       .join("");
   } catch (error) {
-    console.log(error);
     productContainer.innerHTML = "Error fetching product";
     productContainer.style.color = "red";
   }
