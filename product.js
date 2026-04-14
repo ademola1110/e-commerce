@@ -64,7 +64,7 @@ async function fetchProducts() {
         </div>
 
         <button onclick="addToCart(${value.id})"
-          class="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
           Add to Cart
         </button>
 
@@ -114,9 +114,9 @@ function addToCart(id) {
   } else {
     cart.push({
       id: product.id,
-      name: product.name,
+      name: product.title,
       price: product.price,
-      image: product.image_link,
+      image: product.images[0],
       quantity: qty,
     });
   }
@@ -169,7 +169,7 @@ searchForm.addEventListener("submit", function (e) {
         </div> 
         
         <button onclick="addToCart(${value.id})"
-          class="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-700">
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
           Add to Cart
         </button>
       </div>

@@ -24,9 +24,9 @@ function displayCart() {
         <div class="bg-white p-5 rounded shadow text-center">
           <img src="${item.image}" class="w-full h-[150px] object-cover mb-3 rounded">
           <h2 class="font-bold mb-2">${item.title}</h2>
-          <p class="text-green-700 font-bold mb-2">$${item.price}</p>
+          <p class="text-orange-500 font-bold mb-2">$${item.price}</p>
           <p class="font-bold mb-2">Quantity: ${item.quantity}</p>
-          <p class="mt-2 font-bold">Total: $${itemTotal}</p>
+          <p class="mt-2 font-bold">Total: <span class="text-orange-500"> $${itemTotal} </span></p>
           <button onclick="removeFromCart(${item.id})"
             class="mt-3 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">
             Remove

@@ -13,10 +13,12 @@
   <body>
     <!-- Navbar -->
     <nav class="text-white bg-orange-400 shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
+      <div class="max-w-7xl block md:flex justify-between mx-auto lg:px-">
+        <div class="flex justify-between h-16 items-center w-[70%]">
           <!-- Logo -->
-          <div class="flex-shrink-0 text-2xl font-bold">RIT BUSINESS</div>
+          <div class="flex-shrink-0 text-2xl font-bold ml-[10px]">
+            RIT BUSINESS
+          </div>
 
           <!-- Menu Links -->
           <div class="hidden md:hidden lg:flex space-x-6">
@@ -32,6 +34,10 @@
             <a href="contact.html" class="hover:translate-x-1 font-medium"
               >Contacts</a
             >
+          </div>
+
+          <!-- Right Section -->
+          <div class="flex items-center space-x-4 ml-[20px]">
             <div class="hidden md:flex space-x-4">
               <a
                 href="registration.html"
@@ -42,36 +48,7 @@
                 >LogIn</a
               >
             </div>
-          </div>
 
-          <!-- search option -->
-          <form id="searchForm" class="hidden md:flex text-center">
-            <input
-              type="text"
-              id="search"
-              placeholder="search products"
-              style="
-                padding: 12px;
-                border-radius: 15px;
-                border: none;
-                background-color: white;
-                color: black;
-              "
-            />
-            <input
-              type="submit"
-              style="
-                padding: 8px;
-                background-color: green;
-                color: white;
-                border-radius: 15px;
-                border: none;
-              "
-            />
-          </form>
-
-          <!-- Right Section -->
-          <div class="flex items-center space-x-4">
             <!-- Language Dropdown -->
             <div class="relative">
               <button
@@ -155,35 +132,38 @@
             >Log In</a
           >
         </div>
+        <!-- search option for small screens -->
+        <form
+          id="searchForm"
+          class="text-center bg-white md:bg-orange-400 py-[10px]"
+        >
+          <input
+            type="text"
+            id="search"
+            placeholder="search products"
+            style="
+              padding: 12px;
+              border-radius: 15px;
+              border: none;
+              background-color: white;
+              color: black;
+              border: 1px solid orange;
+              width: 70%;
+            "
+          />
+          <input
+            type="submit"
+            style="
+              padding: 8px;
+              background-color: green;
+              color: white;
+              border-radius: 15px;
+              border: none;
+            "
+          />
+        </form>
       </div>
     </nav>
-
-    <!-- search option for small screens -->
-    <form id="searchForm" class="md:hidden text-center py-[10px]">
-      <input
-        type="text"
-        id="search"
-        placeholder="search products"
-        style="
-          padding: 12px;
-          border-radius: 15px;
-          border: none;
-          background-color: white;
-          color: black;
-          border: 1px solid orange;
-        "
-      />
-      <input
-        type="submit"
-        style="
-          padding: 8px;
-          background-color: orange;
-          color: white;
-          border-radius: 15px;
-          border: none;
-        "
-      />
-    </form>
 
     <!-- products container -->
     <div
@@ -214,7 +194,7 @@
               class="w-full px-4 py-3 rounded-l-full bg-[#0b2a2e] text-white focus:outline-none"
             />
             <button
-              class="bg-[#f95e4d] px-6 rounded-r-full flex items-center justify-center hover:bg-red-500 transition duration-300"
+              class="bg-orange-500 px-6 rounded-r-full flex items-center justify-center hover:bg-red-500 transition duration-300"
             >
               <i class="fa-solid fa-paper-plane text-white"></i>
             </button>
@@ -226,17 +206,17 @@
           >
             Company
             <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
+              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-orange-500"
             ></span>
           </h4>
           <ul class="space-y-4">
             <li>
               <a
                 href="index.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -248,10 +228,10 @@
             <li>
               <a
                 href="about.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -263,10 +243,10 @@
             <li>
               <a
                 href="product.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -278,10 +258,10 @@
             <li>
               <a
                 href="registration.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -293,10 +273,10 @@
             <li>
               <a
                 href="login.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -308,10 +288,10 @@
             <li>
               <a
                 href="contact.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
+                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
               >
                 <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
+                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
                 <span
                   class="transition-transform duration-300 group-hover:translate-x-1"
@@ -328,7 +308,7 @@
           >
             Get in Touch
             <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
+              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-orange-500"
             ></span>
           </h4>
           <div class="space-y-6">
@@ -336,7 +316,7 @@
               <div
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
               >
-                <i class="fa-solid fa-location-dot text-[#f95e4d]"></i>
+                <i class="fa-solid fa-location-dot text-orange-500"></i>
               </div>
               <p>
                 184 Sabo Road<br />
@@ -348,7 +328,7 @@
               <div
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
               >
-                <i class="fa-solid fa-phone text-[#f95e4d]"></i>
+                <i class="fa-solid fa-phone text-orange-500"></i>
               </div>
               <p>08106448731</p>
             </div>
@@ -356,38 +336,38 @@
               <div
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
               >
-                <i class="fa-solid fa-envelope text-[#f95e4d]"></i>
+                <i class="fa-solid fa-envelope text-orange-500"></i>
               </div>
               <p>ademola.idrisakinola1110@gmail.com</p>
             </div>
             <div class="flex gap-4 pt-4">
               <a
                 href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
               >
                 <i class="fa-brands fa-facebook-f"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
               >
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
               >
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
               >
                 <i class="fa-brands fa-youtube"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
+                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
               >
                 <i class="fa-brands fa-github"></i>
               </a>
@@ -405,18 +385,18 @@
           </p>
 
           <div class="text-sm flex flex-wrap gap-6 items-center">
-            <a href="#" class="hover:text-[#f95e4d] transition"
+            <a href="#" class="hover:text-orange-500 transition"
               >Privacy Policy</a
             >
-            <a href="#" class="hover:text-[#f95e4d] transition"
+            <a href="#" class="hover:text-orange-500 transition"
               >Terms of Service</a
             >
-            <a href="#" class="hover:text-[#f95e4d] transition"
+            <a href="#" class="hover:text-orange-500 transition"
               >Cookie Policy</a
             >
             <span
               >Designed by
-              <a href="#" class="text-[#f95e4d]">RIT BUSINESS</a></span
+              <a href="#" class="text-orange-500">RIT BUSINESS</a></span
             >
           </div>
         </div>
@@ -428,6 +408,197 @@
       class="w-10 h-10 text-white fixed bottom-10 right-10 bg-orange-500 rounded-[100%]"
       ><i class="fa-solid fa-arrow-up mx-[9px] my-3"></i
     ></a>
-    <script src="product.js"></script>
+    <script>
+      // Language Dropdown
+      const langBtn = document.getElementById("langBtn");
+      const langMenu = document.getElementById("langMenu");
+
+      langBtn.addEventListener("click", () => {
+        langMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+          langMenu.classList.add("hidden");
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileBtn = document.getElementById("mobileBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      let productContainer = document.querySelector("#products");
+      let products = [];
+
+      async function fetchProducts() {
+        try {
+          // Show loading first
+          productContainer.innerHTML = `<p class="text-orange-500 text-lg font-semibold animate-pulse">Loading products...</p>`;
+
+          const url =
+            "https://dummyjson.com/products?limit=50&sortBy=title&order=asc";
+
+          const response = await fetch(url);
+          const data = await response.json();
+
+          products = data.products;
+
+          productContainer.innerHTML = products
+            .map((value) => {
+              quantities[value.id] = 1;
+
+              return `
+      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
+        
+        <img 
+          class="w-full h-[180px] rounded-lg mb-3" 
+          src="${value.images[0]}" 
+        />
+
+        <p class="font-semibold text-gray-800 mb-2">
+          ${value.title}
+        </p>
+
+        <p class="text-orange-500 font-bold text-lg">
+          $${value.price.toLocaleString()}
+        </p>
+
+        <div class="flex items-center justify-center gap-4 mt-3">
+          <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
+          <span id="qty-${value.id}" class="font-bold">1</span>
+          <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
+        </div>
+
+        <button onclick="addToCart(${value.id})"
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
+          Add to Cart
+        </button>
+
+      </div>
+    `;
+            })
+            .join("");
+        } catch (error) {
+          productContainer.innerHTML = "Error fetching product";
+          productContainer.style.color = "red";
+        }
+      }
+
+      fetchProducts();
+
+      let quantities = {};
+      function increaseQty(id) {
+        if (!quantities[id]) {
+          quantities[id] = 1;
+        }
+        quantities[id]++;
+        document.getElementById(`qty-${id}`).innerText = quantities[id];
+      }
+
+      function decreaseQty(id) {
+        if (!quantities[id]) {
+          quantities[id] = 1;
+        }
+        if (quantities[id] > 1) {
+          quantities[id]--;
+          document.getElementById(`qty-${id}`).innerText = quantities[id];
+        }
+      }
+
+      function addToCart(id) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let product = products.find((p) => p.id === id);
+
+        let qty = quantities[id] || 1;
+
+        // Check if product already exists
+        let existingProduct = cart.find((item) => item.id === id);
+
+        if (existingProduct) {
+          existingProduct.quantity += qty;
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.title,
+            price: product.price,
+            image: product.images[0],
+            quantity: qty,
+          });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Added to cart ✅");
+      }
+
+      let searchForm = document.querySelector("#searchForm");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let searchInput = document.querySelector("#search").value;
+
+        let filterCheck = products.filter(function (value, index, array) {
+          return value.title.toLowerCase().includes(searchInput.toLowerCase());
+        });
+
+        console.log(filterCheck);
+
+        if (filterCheck.length === 0) {
+          productContainer.innerHTML =
+            "<p class='text-center text-red-500 text-xl'>No product found</p>";
+          return;
+        }
+
+        productContainer.innerHTML = filterCheck
+          .map(function (value) {
+            quantities[value.id] = 1;
+
+            return `
+      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">   
+        <img 
+              class="w-full h-[180px] rounded-lg mb-3" 
+              src="${value.images[0]}" 
+            />
+            <p class="font-semibold text-gray-800 mb-2">
+              ${value.title}
+            </p>
+            <p class="text-orange-500 font-bold text-lg">
+              $${value.price.toLocaleString()}
+            </p>
+        
+
+        <div class="flex items-center justify-center gap-4 mt-7">
+          <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
+          <span id="qty-${value.id}" class="font-bold text-lg">1</span>
+          <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">+</button>
+        </div> 
+        
+        <button onclick="addToCart(${value.id})"
+          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
+          Add to Cart
+        </button>
+      </div>
+    `;
+          })
+          .join("");
+      });
+
+      const scrollTopBtn = document.getElementById("scroll-top");
+
+      scrollTopBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
   </body>
 </html>
