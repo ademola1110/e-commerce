@@ -1,5 +1,24 @@
 const cartContainer = document.getElementById("cartContainer");
 
+function updateCartBadge() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  let badge = document.getElementById("cart-count");
+
+  if (!badge) return; // ✅ VERY IMPORTANT (prevents error)
+
+  if (totalQty > 0) {
+    badge.classList.remove("hidden");
+    badge.innerText = totalQty;
+  } else {
+    badge.classList.add("hidden");
+  }
+}
+
+updateCartBadge();
+
 // Display cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -23,7 +42,7 @@ function displayCart() {
       return `
         <div class="bg-white p-5 rounded shadow text-center">
           <img src="${item.image}" class="w-full h-[150px] object-cover mb-3 rounded">
-          <h2 class="font-bold mb-2">${item.title}</h2>
+          <h2 class="font-bold mb-2">${item.name}</h2>
           <p class="text-orange-500 font-bold mb-2">$${item.price}</p>
           <p class="font-bold mb-2">Quantity: ${item.quantity}</p>
           <p class="mt-2 font-bold">Total: <span class="text-orange-500"> $${itemTotal} </span></p>
@@ -43,12 +62,16 @@ function displayCart() {
 // Remove item from cart
 function removeFromCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart = cart.filter((item) => item.id != id); // Remove the selected item
+  cart = cart.filter((item) => item.id != id);
+
   localStorage.setItem("cart", JSON.stringify(cart));
-  displayCart(); // Refresh UI
+
+  displayCart();
+  // updateCartBadge(); // ✅ ADD THIS
 }
 
-// Initial display
+updateCartBadge();
+
 displayCart();
 
 const scrollTopBtn = document.getElementById("scroll-top");

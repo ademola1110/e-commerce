@@ -42,34 +42,34 @@ async function fetchProducts() {
         quantities[value.id] = 1;
 
         return `
-      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
-        
-        <img 
-          class="w-full h-[180px] rounded-lg mb-3" 
-          src="${value.images[0]}" 
-        />
+            <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
 
-        <p class="font-semibold text-gray-800 mb-2">
-          ${value.title}
-        </p>
+              <img
+                class="w-full h-[180px] rounded-lg mb-3"
+                src="${value.images[0]}"
+              />
 
-        <p class="text-orange-500 font-bold text-lg">
-          $${value.price.toLocaleString()}
-        </p>
+              <p class="font-semibold text-gray-800 mb-2">
+                ${value.title}
+              </p>
 
-        <div class="flex items-center justify-center gap-4 mt-3">
-          <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
-          <span id="qty-${value.id}" class="font-bold">1</span>
-          <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
-        </div>
+              <p class="text-orange-500 font-bold text-lg">
+                $${value.price.toLocaleString()}
+              </p>
 
-        <button onclick="addToCart(${value.id})"
-          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
-          Add to Cart
-        </button>
+              <div class="flex items-center justify-center gap-4 mt-3">
+                <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
+                <span id="qty-${value.id}" class="font-bold">1</span>
+                <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
+              </div>
 
-      </div>
-    `;
+              <button onclick="addToCart(${value.id})"
+                class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
+                Add to Cart
+              </button>
+
+            </div>
+          `;
       })
       .join("");
   } catch (error) {
@@ -99,14 +99,31 @@ function decreaseQty(id) {
   }
 }
 
+function updateCartBadge() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  let badge = document.getElementById("cart-count");
+
+  if (!badge) return; // ✅ VERY IMPORTANT (prevents error)
+
+  if (totalQty > 0) {
+    badge.classList.remove("hidden");
+    badge.innerText = totalQty;
+  } else {
+    badge.classList.add("hidden");
+  }
+}
+
+updateCartBadge();
+
 function addToCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   let product = products.find((p) => p.id === id);
-
   let qty = quantities[id] || 1;
 
-  // Check if product already exists
   let existingProduct = cart.find((item) => item.id === id);
 
   if (existingProduct) {
@@ -122,6 +139,17 @@ function addToCart(id) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCartBadge();
+
+  // ✅ animation here
+  let badge = document.getElementById("cart-count");
+  if (badge) {
+    badge.classList.add("scale-125");
+    setTimeout(() => {
+      badge.classList.remove("scale-125");
+    }, 200);
+  }
 
   alert("Added to cart ✅");
 }
@@ -149,31 +177,31 @@ searchForm.addEventListener("submit", function (e) {
       quantities[value.id] = 1;
 
       return `
-      <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">   
-        <img 
-              class="w-full h-[180px] rounded-lg mb-3" 
-              src="${value.images[0]}" 
-            />
-            <p class="font-semibold text-gray-800 mb-2">
-              ${value.title}
-            </p>
-            <p class="text-orange-500 font-bold text-lg">
-              $${value.price.toLocaleString()}
-            </p>
-        
+            <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">
+              <img
+                    class="w-full h-[180px] rounded-lg mb-3"
+                    src="${value.images[0]}"
+                  />
+                  <p class="font-semibold text-gray-800 mb-2">
+                    ${value.title}
+                  </p>
+                  <p class="text-orange-500 font-bold text-lg">
+                    $${value.price.toLocaleString()}
+                  </p>
 
-        <div class="flex items-center justify-center gap-4 mt-7">
-          <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
-          <span id="qty-${value.id}" class="font-bold text-lg">1</span>
-          <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">+</button>
-        </div> 
-        
-        <button onclick="addToCart(${value.id})"
-          class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
-          Add to Cart
-        </button>
-      </div>
-    `;
+
+              <div class="flex items-center justify-center gap-4 mt-7">
+                <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">-</button>
+                <span id="qty-${value.id}" class="font-bold text-lg">1</span>
+                <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded text-lg font-bold">+</button>
+              </div>
+
+              <button onclick="addToCart(${value.id})"
+                class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
+                Add to Cart
+              </button>
+            </div>
+          `;
     })
     .join("");
 });
