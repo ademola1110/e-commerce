@@ -13,12 +13,11 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// Mobile menu toggle
-const mobileBtn = document.getElementById("mobileBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-
+// short code for mobile menu toggle
 mobileBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
+  menuIcon.classList.toggle("fa-bars");
+  menuIcon.classList.toggle("fa-xmark");
 });
 
 function onlyText(input) {
