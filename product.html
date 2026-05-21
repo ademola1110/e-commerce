@@ -2,23 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>RIT BUSINESS</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
+
+    <style>
+      * {
+        scroll-behavior: smooth;
+        transition: all 0.3s ease;
+      }
+    </style>
   </head>
-  <body>
+
+  <body class="bg-gray-50">
+
     <!-- Navbar -->
     <nav class="text-white bg-orange-400 shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl block md:flex justify-between mx-auto lg:px-">
+      <div class="max-w-7xl block md:flex justify-between mx-auto">
+
         <div class="flex justify-between h-16 items-center w-[100%] px-[10px]">
+
           <!-- LEFT SIDE -->
           <div class="flex items-center gap-3">
+
             <!-- Mobile Menu Button -->
             <div class="relative md:block lg:hidden">
+
               <button
                 id="mobileBtn"
                 class="text-white focus:outline-none text-2xl"
@@ -31,80 +51,121 @@
                 id="mobileMenu"
                 class="absolute left-0 mt-2 w-40 bg-orange-400 rounded shadow-lg hidden z-50"
               >
-                <a href="index.html" class="block px-4 py-2">Home page</a>
-                <a href="about.html" class="block px-4 py-2">About</a>
-                <a href="product.html" class="block px-4 py-2">Products</a>
-                <a href="contact.html" class="block px-4 py-2">Contacts</a>
-                <a href="registration.html" class="block px-4 py-2">Register</a>
-                <a href="login.html" class="block px-4 py-2">Log In</a>
+                <a href="index.html" class="block px-4 py-2">
+                  Home page
+                </a>
+
+                <a href="about.html" class="block px-4 py-2">
+                  About
+                </a>
+
+                <a href="product.html" class="block px-4 py-2">
+                  Products
+                </a>
+
+                <a href="contact.html" class="block px-4 py-2">
+                  Contacts
+                </a>
+
+                <a href="registration.html" class="block px-4 py-2">
+                  Register
+                </a>
+
+                <a href="login.html" class="block px-4 py-2">
+                  Log In
+                </a>
               </div>
             </div>
+
             <!-- Logo -->
-            <div class="flex-shrink-0 text-2xl font-bold">RIT BUSINESS</div>
+            <div class="flex-shrink-0 text-2xl font-bold">
+              RIT BUSINESS
+            </div>
           </div>
 
           <!-- Menu Links -->
           <div class="hidden lg:flex space-x-6">
-            <a href="index.html" class="hover:translate-x-1 font-medium"
-              >Homepage</a
+
+            <a
+              href="index.html"
+              class="hover:translate-x-1 font-medium"
             >
-            <a href="about.html" class="hover:translate-x-1 font-medium"
-              >About</a
+              Homepage
+            </a>
+
+            <a
+              href="about.html"
+              class="hover:translate-x-1 font-medium"
             >
-            <a href="product.html" class="hover:translate-x-1 font-medium"
-              >Products</a
+              About
+            </a>
+
+            <a
+              href="product.html"
+              class="hover:translate-x-1 font-medium"
             >
-            <a href="contact.html" class="hover:translate-x-1 font-medium"
-              >Contacts</a
+              Products
+            </a>
+
+            <a
+              href="contact.html"
+              class="hover:translate-x-1 font-medium"
             >
+              Contacts
+            </a>
+
           </div>
 
           <!-- Right Section -->
           <div class="flex items-center space-x-4 ml-[20px]">
+
             <div class="hidden md:flex space-x-4">
+
               <a
                 href="registration.html"
                 class="hover:translate-x-1 font-medium"
-                >Register</a
               >
-              <a href="login.html" class="hover:translate-x-1 font-medium"
-                >LogIn</a
+                Register
+              </a>
+
+              <a
+                href="login.html"
+                class="hover:translate-x-1 font-medium"
               >
+                LogIn
+              </a>
+
             </div>
 
             <!-- Language Dropdown -->
             <div class="relative">
+
               <button
                 id="langBtn"
                 class="flex items-center font-medium focus:outline-none"
               >
-                <i class="fa-solid fa-globe mr-1"></i>EN
+                <i class="fa-solid fa-globe mr-1"></i>
+
+                EN
+
                 <i class="fa-solid fa-chevron-down ml-1"></i>
               </button>
+
               <div
                 id="langMenu"
                 class="absolute text-white right-0 mt-2 w-24 bg-orange-400 border rounded shadow-lg hidden"
               >
-                <a
-                  href="#"
-                  class="block px-4 py-2"
-                  >EN</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2"
-                  >FR</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2"
-                  >ES</a
-                >
+                <a href="#" class="block px-4 py-2">EN</a>
+
+                <a href="#" class="block px-4 py-2">FR</a>
+
+                <a href="#" class="block px-4 py-2">ES</a>
               </div>
             </div>
 
             <!-- Cart -->
             <div class="relative">
+
               <a href="cart.html" class="text-white text-xl">
                 <i class="fa-solid fa-cart-arrow-down"></i>
               </a>
@@ -112,540 +173,382 @@
               <!-- Badge -->
               <span
                 id="cart-count"
-                class="hidden absolute -top-2 -right-3 bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full"
+                class="hidden absolute -top-2 -right-3 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full"
               >
                 0
               </span>
+
             </div>
           </div>
         </div>
-
-        <!-- search option for small screens -->
-        <form
-          id="searchForm"
-          class="text-center bg-white md:bg-orange-400 py-[10px]"
-        >
-          <input
-            type="text"
-            id="search"
-            placeholder="search products"
-            style="
-              padding: 12px;
-              border-radius: 15px;
-              border: none;
-              background-color: white;
-              color: black;
-              border: 1px solid orange;
-              width: 90%;
-            "
-          />
-        </form>
       </div>
     </nav>
 
-    <!-- products container -->
+    <!-- Hero Banner -->
+    <section
+      class="relative h-[60vh] bg-[url('https://images.unsplash.com/photo-1607082349566-187342175e2f')] bg-cover bg-center flex items-center justify-center"
+    >
+
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="relative z-10 text-center text-white px-5">
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+          Explore Amazing Products
+        </h1>
+
+        <p class="text-lg md:text-2xl max-w-3xl mx-auto mb-8">
+          Discover premium quality products at affordable prices.
+        </p>
+
+        <a
+          href="#products"
+          class="bg-orange-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600"
+        >
+          Shop Now
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Beautiful Search Section -->
+    <section class="px-5 -mt-10 relative z-20">
+
+      <div
+        class="max-w-5xl mx-auto bg-white shadow-2xl rounded-3xl p-5 md:p-8"
+      >
+
+        <div class="text-center mb-6">
+
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+            Find Your Favorite Products
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            Search for electronics, fashion, beauty products and more.
+          </p>
+
+        </div>
+
+        <form id="searchForm" class="relative">
+
+          <input
+            type="text"
+            id="search"
+            placeholder="Search products here..."
+            class="w-full border-2 border-orange-300 focus:border-orange-500 focus:outline-none rounded-2xl py-5 pl-16 pr-5 text-lg shadow-sm"
+          />
+
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-orange-500 text-xl"
+          ></i>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Product Heading -->
+    <div class="text-center py-16 px-5">
+
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
+        Our Products
+      </h2>
+
+      <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+        Browse our latest collections carefully selected to meet your needs.
+      </p>
+
+    </div>
+
+    <!-- Products Container -->
     <div
       id="products"
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-5"
     ></div>
 
-    <!-- footer -->
-    <footer id="footer" class="bg-[#001a1d] text-gray-300 mt-[100px]">
-      <div class="mx-auto px-6 py-20 grid md:grid-cols-2 lg:grid-cols-3">
+    <!-- Promo Banner -->
+    <section class="py-20 px-6">
+
+      <div
+        class="bg-orange-500 rounded-3xl p-10 md:p-16 text-white flex flex-col lg:flex-row items-center justify-between gap-10"
+      >
+
         <div>
-          <h2 class="text-3xl font-bold text-white mb-6 font-[raleway]">
-            RIT BUSINESS
+
+          <h2 class="text-4xl md:text-5xl font-bold mb-5">
+            Get 50% Discount
           </h2>
-          <p class="mb-6">
-            Discover products that bring quality, style, and convenience into
-            your everyday life! Our carefully selected range is designed to meet
-            your needs—whether you're looking for durability, affordability, or
-            modern design.
-          </p>
-          <h3 class="text-white font-semibold mb-3 font-[raleway] text-[16px]">
-            Stay Updated
-          </h3>
-          <form class="flex">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="w-full px-4 py-3 rounded-l-full bg-[#0b2a2e] text-white focus:outline-none"
-            />
-            <button
-              class="bg-orange-500 px-6 rounded-r-full flex items-center justify-center transition duration-300"
-            >
-              <i class="fa-solid fa-paper-plane text-white"></i>
-            </button>
-          </form>
-        </div>
-        <div class="md:ml-[150px] lg:ml-[150px]">
-          <h4
-            class="text-white font-bold text-lg mb-6 relative inline-block font-[raleway]"
-          >
-            Company
-            <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-orange-500"
-            ></span>
-          </h4>
-          <ul class="space-y-4">
-            <li>
-              <a
-                href="index.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Homepage
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="about.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  About
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="product.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Products
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="registration.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Registration
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="login.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  LogIn
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-orange-500"
-              >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-orange-500 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Contact
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4
-            class="text-white font-bold text-lg mb-6 relative inline-block font-[raleway]"
-          >
-            Get in Touch
-            <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-orange-500"
-            ></span>
-          </h4>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
-                <i class="fa-solid fa-location-dot text-orange-500"></i>
-              </div>
-              <p>
-                184 Sabo Road<br />
-                Sabo, Osogbo<br />
-                Osun States
-              </p>
-            </div>
-            <div class="flex items-center gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
-                <i class="fa-solid fa-phone text-orange-500"></i>
-              </div>
-              <p>08106448731</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
-                <i class="fa-solid fa-envelope text-orange-500"></i>
-              </div>
-              <p>ademola.idrisakinola1110@gmail.com</p>
-            </div>
-            <div class="flex gap-4 pt-4">
-              <a
-                href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-[#0b2a2e] bg-[#031013]">
-        <div
-          class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p>
-            © Copyright <strong class="text-white">MyWebsite</strong> All Rights
-            Reserved
+
+          <p class="text-lg max-w-2xl">
+            Shop now and enjoy exclusive discounts on selected products.
           </p>
 
-          <div class="text-sm flex flex-wrap gap-6 items-center">
-            <a href="#" class="hover:text-orange-500 transition"
-              >Privacy Policy</a
-            >
-            <a href="#" class="hover:text-orange-500 transition"
-              >Terms of Service</a
-            >
-            <a href="#" class="hover:text-orange-500 transition"
-              >Cookie Policy</a
-            >
-            <span
-              >Designed by
-              <a href="#" class="text-orange-500">RIT BUSINESS</a></span
-            >
+        </div>
+
+        <a
+          href="#products"
+          class="bg-white text-orange-500 px-8 py-4 rounded-lg font-bold hover:bg-gray-100"
+        >
+          Start Shopping
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Delivery Info -->
+    <section class="py-20 bg-gray-100 mt-20">
+
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6"
+      >
+
+        <div class="text-center">
+
+          <i class="fa-solid fa-truck-fast text-5xl text-orange-500 mb-5"></i>
+
+          <h3 class="font-bold text-xl mb-3">
+            Fast Delivery
+          </h3>
+
+          <p class="text-gray-500">
+            Delivery within 24 - 72 hours nationwide.
+          </p>
+
+        </div>
+
+        <div class="text-center">
+
+          <i
+            class="fa-solid fa-shield-halved text-5xl text-orange-500 mb-5"
+          ></i>
+
+          <h3 class="font-bold text-xl mb-3">
+            Secure Shopping
+          </h3>
+
+          <p class="text-gray-500">
+            Safe and protected payment system.
+          </p>
+
+        </div>
+
+        <div class="text-center">
+
+          <i class="fa-solid fa-credit-card text-5xl text-orange-500 mb-5"></i>
+
+          <h3 class="font-bold text-xl mb-3">
+            Easy Payment
+          </h3>
+
+          <p class="text-gray-500">
+            Multiple payment methods available.
+          </p>
+
+        </div>
+
+        <div class="text-center">
+
+          <i class="fa-solid fa-headset text-5xl text-orange-500 mb-5"></i>
+
+          <h3 class="font-bold text-xl mb-3">
+            24/7 Support
+          </h3>
+
+          <p class="text-gray-500">
+            Customer support always available.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="py-20 bg-white">
+
+      <div class="text-center mb-14">
+
+        <h2 class="text-4xl font-bold text-gray-800">
+          Customer Reviews
+        </h2>
+
+      </div>
+
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6"
+      >
+
+        <div class="bg-gray-100 p-8 rounded-2xl shadow">
+
+          <div class="text-yellow-400 mb-4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <p class="text-gray-600 mb-5">
+            Amazing products and very fast delivery service.
+          </p>
+
+          <h4 class="font-bold">
+            Michael Johnson
+          </h4>
+
+        </div>
+
+        <div class="bg-gray-100 p-8 rounded-2xl shadow">
+
+          <div class="text-yellow-400 mb-4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+
+          <p class="text-gray-600 mb-5">
+            Very affordable and high quality products.
+          </p>
+
+          <h4 class="font-bold">
+            Sarah Williams
+          </h4>
+
+        </div>
+
+        <div class="bg-gray-100 p-8 rounded-2xl shadow">
+
+          <div class="text-yellow-400 mb-4">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <p class="text-gray-600 mb-5">
+            Great shopping experience and excellent support.
+          </p>
+
+          <h4 class="font-bold">
+            David Smith
+          </h4>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="bg-black text-white py-20 text-center px-5">
+
+      <h2 class="text-4xl font-bold mb-5">
+        Subscribe To Our Newsletter
+      </h2>
+
+      <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+        Get updates about new products, offers, and discounts.
+      </p>
+
+      <div class="flex justify-center flex-wrap gap-4">
+
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="px-5 py-4 rounded-lg text-white w-[350px] border bg-transparent"
+        />
+
+        <button
+          class="bg-orange-500 px-8 py-4 rounded-lg font-semibold hover:bg-orange-600"
+        >
+          Subscribe
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#001a1d] text-gray-300 mt-[100px]">
+
+      <div class="mx-auto px-6 py-20 grid md:grid-cols-2 lg:grid-cols-3">
+
+        <div>
+
+          <h2 class="text-3xl font-bold text-white mb-6">
+            RIT BUSINESS
+          </h2>
+
+          <p class="mb-6">
+            Discover products that bring quality, style, and convenience into
+            your everyday life!
+          </p>
+
+        </div>
+
+        <div class="md:ml-[150px] lg:ml-[150px]">
+
+          <h4 class="text-white font-bold text-lg mb-6">
+            Company
+          </h4>
+
+          <ul class="space-y-4">
+
+            <li>
+              <a href="index.html">Homepage</a>
+            </li>
+
+            <li>
+              <a href="about.html">About</a>
+            </li>
+
+            <li>
+              <a href="product.html">Products</a>
+            </li>
+
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div>
+
+          <h4 class="text-white font-bold text-lg mb-6">
+            Get in Touch
+          </h4>
+
+          <div class="space-y-6">
+
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-phone text-orange-500"></i>
+              <p>08106448731</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-envelope text-orange-500"></i>
+              <p>ademola.idrisakinola1110@gmail.com</p>
+            </div>
+
           </div>
         </div>
+
       </div>
     </footer>
+
+    <!-- Scroll Top -->
     <a
       href="#"
       id="scroll-top"
-      class="w-10 h-10 text-white fixed bottom-10 right-10 bg-orange-500 rounded-[100%]"
-      ><i class="fa-solid fa-arrow-up mx-[9px] my-3"></i
-    ></a>
-    <script>
-      // Language Dropdown
-const langBtn = document.getElementById("langBtn");
-const langMenu = document.getElementById("langMenu");
+      class="w-10 h-10 text-white fixed bottom-10 right-10 bg-orange-500 rounded-full"
+    >
+      <i class="fa-solid fa-arrow-up mx-[9px] my-3"></i>
+    </a>
 
-langBtn.addEventListener("click", () => {
-  langMenu.classList.toggle("hidden");
-});
+    <script src="product.js"></script>
 
-// Close dropdown if clicked outside
-window.addEventListener("click", (e) => {
-  if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-    langMenu.classList.add("hidden");
-  }
-});
-
-
-// short code for mobile menu toggle
-mobileBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-  menuIcon.classList.toggle("fa-bars");
-  menuIcon.classList.toggle("fa-xmark");
-});
-
-let productContainer = document.querySelector("#products");
-let products = [];
-
-async function fetchProducts() {
-  try {
-    // Show loading first
-    productContainer.innerHTML = `<p class="text-orange-500 text-lg font-semibold animate-pulse">Loading products...</p>`;
-
-    const url =
-      "https://dummyjson.com/products?limit=50&sortBy=title&order=asc";
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    products = data.products;
-
-    productContainer.innerHTML = products
-      .map((value) => {
-        quantities[value.id] = 1;
-
-        return `
-            <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl">
-
-              <img
-                class="w-full h-[180px] rounded-lg mb-3"
-                src="${value.images[0]}"
-              />
-
-              <p class="font-semibold text-gray-800 mb-2">
-                ${value.title}
-              </p>
-
-              <p class="text-orange-500 font-bold text-lg">
-                $${value.price.toLocaleString()}
-              </p>
-
-              <div class="flex items-center justify-center gap-4 mt-3">
-                <button onclick="decreaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">-</button>
-                <span id="qty-${value.id}" class="font-bold">1</span>
-                <button onclick="increaseQty(${value.id})" class="bg-gray-300 px-3 py-1 rounded">+</button>
-              </div>
-
-              <button onclick="addToCart(${value.id})"
-                class="bg-orange-500 text-white px-4 py-2 rounded mt-2">
-                Add to Cart
-              </button>
-
-            </div>
-          `;
-      })
-      .join("");
-  } catch (error) {
-    productContainer.innerHTML = "Error fetching product";
-    productContainer.style.color = "red";
-  }
-}
-
-fetchProducts();
-
-let quantities = {};
-function increaseQty(id) {
-  if (!quantities[id]) {
-    quantities[id] = 1;
-  }
-  quantities[id]++;
-  document.getElementById(`qty-${id}`).innerText = quantities[id];
-}
-
-function decreaseQty(id) {
-  if (!quantities[id]) {
-    quantities[id] = 1;
-  }
-  if (quantities[id] > 1) {
-    quantities[id]--;
-    document.getElementById(`qty-${id}`).innerText = quantities[id];
-  }
-}
-
-function updateCartBadge() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  let totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  let badge = document.getElementById("cart-count");
-
-  if (!badge) return; // ✅ VERY IMPORTANT (prevents error)
-
-  if (totalQty > 0) {
-    badge.classList.remove("hidden");
-    badge.innerText = totalQty;
-  } else {
-    badge.classList.add("hidden");
-  }
-}
-
-updateCartBadge();
-
-function addToCart(id) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  let product = products.find((p) => p.id === id);
-  let qty = quantities[id] || 1;
-
-  let existingProduct = cart.find((item) => item.id === id);
-
-  if (existingProduct) {
-    existingProduct.quantity += qty;
-  } else {
-    cart.push({
-      id: product.id,
-      name: product.title,
-      price: product.price,
-      image: product.images[0],
-      quantity: qty,
-    });
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  updateCartBadge();
-
-  // ✅ animation here
-  let badge = document.getElementById("cart-count");
-  if (badge) {
-    badge.classList.add("scale-125");
-    setTimeout(() => {
-      badge.classList.remove("scale-125");
-    }, 200);
-  }
-
-  alert("Added to cart ✅");
-}
-
-let searchForm = document.querySelector("#searchForm");
-
-let searchInput = document.querySelector("#search");
-
-searchInput.addEventListener("input", function () {
-
-  let searchValue = searchInput.value.toLowerCase().trim();
-
-  let filterCheck = products.filter(function (value) {
-
-    return value.title
-      .toLowerCase()
-      .includes(searchValue);
-
-  });
-
-  // Show all products if input is empty
-  if (searchValue === "") {
-
-    fetchProducts();
-
-    return;
-  }
-
-  // Product not found
-  if (filterCheck.length === 0) {
-
-    productContainer.innerHTML =
-      "<p class='text-center text-red-500 text-2xl font-bold col-span-full'>Product Not Found ❌</p>";
-
-    return;
-  }
-
-  // Display filtered products
-  productContainer.innerHTML = filterCheck
-    .map(function (value) {
-
-      quantities[value.id] = 1;
-
-      return `
-        <div class="text-center shadow-md p-4 bg-white rounded-lg hover:shadow-xl transition duration-300">
-
-          <img
-            class="w-full h-[180px] rounded-lg mb-3"
-            src="${value.images[0]}"
-          />
-
-          <p class="font-semibold text-gray-800 mb-2">
-            ${value.title}
-          </p>
-
-          <p class="text-orange-500 font-bold text-lg">
-            $${value.price.toLocaleString()}
-          </p>
-
-          <div class="flex items-center justify-center gap-4 mt-7">
-
-            <button
-              onclick="decreaseQty(${value.id})"
-              class="bg-gray-300 px-3 py-1 rounded text-lg font-bold"
-            >
-              -
-            </button>
-
-            <span id="qty-${value.id}" class="font-bold text-lg">
-              1
-            </span>
-
-            <button
-              onclick="increaseQty(${value.id})"
-              class="bg-gray-300 px-3 py-1 rounded text-lg font-bold"
-            >
-              +
-            </button>
-
-          </div>
-
-          <button
-            onclick="addToCart(${value.id})"
-            class="bg-orange-500 text-white px-4 py-2 rounded mt-2"
-          >
-            Add to Cart
-          </button>
-
-        </div>
-      `;
-    })
-    .join("");
-
-});
-
-
-const scrollTopBtn = document.getElementById("scroll-top");
-
-scrollTopBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
-
-    </script>
   </body>
 </html>
