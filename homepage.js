@@ -91,6 +91,26 @@ searchInput.addEventListener("keyup", function () {
   displayProducts(filteredProducts);
 });
 
+function updateCartBadge() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  let badge = document.getElementById("cart-count");
+
+  if (!badge) return;
+
+  if (totalQty > 0) {
+    badge.classList.remove("hidden");
+
+    badge.innerText = totalQty;
+  } else {
+    badge.classList.add("hidden");
+  }
+}
+
+updateCartBadge();
+
 // Scroll Top
 const scrollTopBtn = document.getElementById("scroll-top");
 

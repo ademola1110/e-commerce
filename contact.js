@@ -20,6 +20,26 @@ mobileBtn.addEventListener("click", () => {
   menuIcon.classList.toggle("fa-xmark");
 });
 
+function updateCartBadge() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  let badge = document.getElementById("cart-count");
+
+  if (!badge) return;
+
+  if (totalQty > 0) {
+    badge.classList.remove("hidden");
+
+    badge.innerText = totalQty;
+  } else {
+    badge.classList.add("hidden");
+  }
+}
+
+updateCartBadge();
+
 const scrollTopBtn = document.getElementById("scroll-top");
 
 scrollTopBtn.addEventListener("click", function (e) {
