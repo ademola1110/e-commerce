@@ -68,10 +68,8 @@ function displayProducts(items) {
                 </p>
 
                 <button
-                  class="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
-                >
-                  Add to Cart
-                </button>
+                class="add-to-cart mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
+                >Add to Cart</button>
               </div>
             `;
     })
@@ -79,6 +77,14 @@ function displayProducts(items) {
 }
 
 fetchProducts();
+
+// if user click add to cart in the homepage, it
+//  will redirect user to registration page.
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    window.location.href = "registration.html";
+  }
+});
 
 // Search Products
 searchInput.addEventListener("keyup", function () {
