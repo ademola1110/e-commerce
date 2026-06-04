@@ -34,7 +34,7 @@ async function fetchProducts() {
           `;
 
     const url =
-      "https://dummyjson.com/products?limit=20&sortBy=title&order=asc";
+      "https://dummyjson.com/products?limit=20";
 
     const response = await fetch(url);
     const data = await response.json();
