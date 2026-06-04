@@ -54,33 +54,37 @@
 
     <!-- Confirmation Modal -->
     <div
-      id="confirmModal"
-      class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
-    >
-      <div class="bg-white p-6 rounded-xl shadow-xl w-[350px] text-center">
-        <h2 class="text-2xl font-bold mb-4 text-orange-500">Remove Product</h2>
+  id="confirmModal"
+  class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 px-4"
+>
+  <div
+    class="bg-white p-8 rounded-xl shadow-xl w-[90%] max-w-[700px] text-center"
+  >
+    <h2 class="text-3xl font-bold mb-6 text-orange-500">
+      Remove Product
+    </h2>
 
-        <p class="text-gray-700 mb-6">
-          Are you sure you want to remove this product from cart?
-        </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Are you sure you want to remove this product from cart?
+    </p>
 
-        <div class="flex justify-center gap-4">
-          <button
-            id="yesBtn"
-            class="bg-red-600 hover:bg-red-500 text-white px-6 py-2 rounded-lg"
-          >
-            Yes
-          </button>
+    <div class="flex justify-center gap-6">
+      <button
+        id="yesBtn"
+        class="bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-lg text-lg font-bold"
+      >
+        Yes
+      </button>
 
-          <button
-            id="noBtn"
-            class="bg-gray-400 hover:bg-gray-500 text-white px-6 py-2 rounded-lg"
-          >
-            No
-          </button>
-        </div>
-      </div>
+      <button
+        id="noBtn"
+        class="bg-gray-400 hover:bg-gray-500 text-white px-8 py-3 rounded-lg text-lg font-bold"
+      >
+        No
+      </button>
     </div>
+  </div>
+</div>
 
     <script src="cart.js"></script>
   </body>
