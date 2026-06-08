@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Payment Successful</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  >
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-5">
+
+  <div
+    class="bg-white shadow-xl rounded-2xl p-8 max-w-lg w-full text-center"
+  >
+    <!-- Success Icon -->
+    <div
+      class="w-24 h-24 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-6"
+    >
+      <i class="fa-solid fa-check text-green-600 text-5xl"></i>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold text-green-600 mb-4">
+      Payment Successful!
+    </h1>
+
+    <!-- Message -->
+    <p class="text-gray-600 text-lg mb-6">
+      Thank you for your purchase.
+      Your payment has been received successfully.
+    </p>
+
+    <!-- Order Status -->
+    <div
+      id="paymentInfo"
+      class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6"
+    >
+      <p class="font-semibold text-green-700">
+        Order Status: Confirmed
+      </p>
+
+      <p class="text-sm text-gray-600 mt-2">
+        We are processing your order and will contact you soon.
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col gap-3">
+      <a
+        href="product.html"
+        class="bg-orange-500 hover:bg-orange-400 text-white py-3 rounded-lg font-bold"
+      >
+        Continue Shopping
+      </a>
+
+      <a
+        href="index.html"
+        class="bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-lg font-bold"
+      >
+        Back To Home
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Get payment reference from URL
+
+    const params = new URLSearchParams(
+      window.location.search
+    );
+
+    const reference = params.get("ref");
+
+    if (reference) {
+      document.getElementById("paymentInfo").innerHTML += `
+        <div class="mt-4 border-t pt-4">
+          <p class="text-sm text-gray-700">
+            Transaction Reference
+          </p>
+
+          <p class="font-bold text-green-700 break-all">
+            ${reference}
+          </p>
+        </div>
+      `;
+    }
+
+    // Prevent user from going back to payment page
+
+    history.pushState(null, null, location.href);
+
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  </script>
+
+</body>
+</html>
