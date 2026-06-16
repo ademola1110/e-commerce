@@ -189,7 +189,18 @@ function addToCart(id) {
 
   updateCartBadge();
 
-  alert("Added to cart ✅");
+  // Show success notification
+  showCartNotification();
+}
+// show cart notification
+function showCartNotification() {
+  const notification = document.getElementById("cartNotification");
+
+  notification.classList.remove("hidden");
+
+  setTimeout(() => {
+    notification.classList.add("hidden");
+  }, 2000); // disappears after 2 seconds
 }
 
 // SEARCH WHILE TYPING
